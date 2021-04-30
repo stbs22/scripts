@@ -12,10 +12,8 @@ df <- data.frame(nombres,p1,p2,p3,p4,tarea,proyecto)
 df
 View(df)
 
-
-
-
 csv = read.csv( archivo ,sep=";")
 
 write.csv( csv ,file="notas.csv",sep =",")
+
 
