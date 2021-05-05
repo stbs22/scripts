@@ -5,7 +5,7 @@ from matplotlib.ticker import FuncFormatter
 import csv
 
 #Lectura del csv
-data = pd.read_csv("/home/_init_/Documentos/Data/FCD/datap1.csv", sep=",")
+data = pd.read_csv("Data/FCD/datap1.csv", sep=",")
 df = data["Age"]
 
 #Creamos linea para mostrar la mediana
