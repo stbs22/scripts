@@ -3,16 +3,50 @@ install.packages("readxl")
 library(readxl)
 options(max.print = 9999999)
 
-setwd("/home/_init_/Documentos/Scripts/GIT/scripts/Data/FCD/"); base_na = read.csv("datap1.csv", sep = ","); base = subset(base,!(is.na(base_na$Age)))
+setwd("/home/_init_/Documentos/Scripts/GIT/scripts/Data/FCD/"); base_na = read.csv("datap1.csv", sep = ","); 
+base = subset(base_na,!(is.na(base_na$Age)))
 
-setwd("C:/Users/ESTEBAN/Documents/Scripts_U/git/scripts/Data/FCD"); base_na = read.csv("datap1.csv", sep = ","); base = subset(base,!(is.na(base_na$Age)))
+setwd("C:/Users/ESTEBAN/Documents/Scripts_U/git/scripts/Data/FCD"); base_na = read.csv("datap1.csv", sep = ","); base = subset(base_na,!(is.na(base_na)))
 
 colnames(base)
 
-mean(base$Age)
+eval = {
+  #base$ID
+  #base$Name
+  #base$Sex
+  #base$Age
+  #base$Height
+  #base$Weight
+  #base$Team
+  base$NOC
+  #base$Games
+  #base$Year
+  #base$Season
+  #base$City
+  #base$Sport
+  #base$Event
+  #base$Medal
+}
 
+table(eval)
 
-typeof(table(base$Age))
+sort(table(eval))
+
+length(table(eval))
+
+for(i in 1:(length(names(sort(table(eval))))) ){
+  print(names(sort(table(eval)[i])))
+  print(mean(subset(base, eval == names(sort(table(eval)[i])))$Age))
+}
+
+mean(subset(base, eval == names(sort(table(eval)[i])))$Age)
+mean(subset(base, eval == "KUW")$Age)
+
+names(table(sort(boxplot.stats(base$Age)$out)))
+table(sort(boxplot.stats(base$Age)$out))
+
+barplot(table(base$Age), main = "Frecuencia Edades", col = rainbow(2))
+
 
 as.data.frame(sort(table(base$Team)))
 mean(subset(base, base$Team == "United States")$Age)
@@ -26,45 +60,3 @@ mean(subset(base, base$Medal == "Silver")$Age)
 mean(subset(base, base$Medal == "Bronze")$Age)
 mean(subset(base, is.na(base$Medal))$Age)
 
-table(base$Year)
-
-min(subset(base, base$Year == "1896")$Age)
-
-(length(names(sort(table(base$Year)))))
-for(i in 1:(length(names(sort(table(base$Year))))) ){
-  print(names(sort(table(base$Year)[i])))
-  print(min(subset(base, base$Year == names(sort(table(base$Year)[i])))$Age))
-}
-
-as.data.frame(sort(table(base$Sport)))
-
-
-
-lista = list()
-as.data.frame(lista)
-lista 
-
-typeof(sample(1:10))
-typeof( mean(subset(base, base$Sport == dep[1])$Age) )
-
-as.data.frame(lista, row.names = dep)
-table(sort(boxplot.stats(base$Age)$out))
-
-length(table(base$Name))
-
-base$Age
-barplot(table(base$Age), main = "Frecuencia Edades", col = rainbow(2))
-
-dep = (names(sort(table(base$Sport))) )
-dep
-
-mean(subset(base, base$Sport == dep)$Age)
-
-(length(names(sort(table(base$Sport)))))
-for(i in 1:(length(names(sort(table(base$Sport))))) ){
-  print(names(sort(table(base$Sport)[i])))
-  print(mean(subset(base, base$Sport == names(sort(table(base$Sport)[i])))$Age))
-}
-
-lista[66]
-barplot(base$games, horizontal = T, main = 'EDAD', col= rainbow(1) )
