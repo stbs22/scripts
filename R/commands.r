@@ -3,16 +3,18 @@ install.packages("readxl")
 library(readxl)
 options(max.print = 9999999)
 
-setwd("/home/_init_/Documentos/Scripts/GIT/scripts/Data/FCD/"); base_na = read.csv("Data_limpio.csv", sep = ","); 
-setwd("/home/_init_/Documentos/Scripts/GIT/scripts/Data/FCD/"); base_na = read.csv("datap1.csv", sep = ","); 
+setwd("/home/_init_/Documentos/Scripts/GIT/scripts/Data/FCD/"); base = read.csv("Data_limpio.csv", sep = ","); 
+setwd("/home/_init_/Documentos/Scripts/GIT/scripts/Data/FCD/"); base = read.csv("datap1.csv", sep = ","); 
 
 setwd("C:/Users/ESTEBAN/Documents/Scripts_U/git/scripts/Data/FCD"); base_na = read.csv("datap1.csv", sep = ","); 
 
 colnames(base)
-"Name"   "Sex" "Team"   "NOC"    "Games" "Season" "City"   "Sport" "Event"  "Medal"
+
+# "Name"   "Sex" "Team" "NOC"    "Games" "Season" "City"   "Sport" "Event"  "Medal"
+
 eval = {  
   #base$ID
-  base$Name
+  #base$Name
   #base$Sex
   #base$Age
   #base$Height
@@ -26,7 +28,7 @@ eval = {
   #base$Sport
   #base$Event
   #base$Medal
-}
+};length(table(eval))
 
 ################################################################################
 
@@ -38,6 +40,10 @@ names(tail(sort(table(eval)),n= 10))
 
 table(sort(boxplot.stats(base$Age)$out))
 
+subset(base, eval == names(sort(table(eval)[i])))$Age
+
+mean(subset(base, eval == "NAM")$Age)
+
 for(i in 1:(length(names(sort(table(eval))))) ){
   print(names(sort(table(eval)[i])))
   print(mean(subset(base, eval == names(sort(table(eval)[i])))$Age))
@@ -45,18 +51,18 @@ for(i in 1:(length(names(sort(table(eval))))) ){
 
 ################################################################################
 
-caso = list("Alfred James Munnings"  ,  "Johann \"Hans\" Sauter" ,"Michel Mathiot" ,"Alfrd (Arnold-) Hajs (Guttmann-)", "Andreas Wecker" ,"Jean Lucien Nicolas Jacoby" ,"Takashi Ono" ,"Joseph \"Josy\" Stoffel" ,"Heikki Ilmari Savolainen"  ,"Robert Tait McKenzie" )
-
+caso = list("Bronze"   ,  "Gold" ,"No Medal"  , "Silver" )
 for(i in 1:length(caso)){
   print(caso[[i]])
   print(mean((subset(base, eval == caso[[i]]))$Age))
-  print(var((subset(base, eval == caso[[i]]))$Age))
-  print((subset(base, eval == caso[[i]]))$Age)
-  print(table((subset(base, eval == caso[[i]]))$Sport))
+  #print(var((subset(base, eval == caso[[i]]))$Age))
+  #print((subset(base, eval == caso[[i]]))$Age)
+  #print(table((subset(base, eval == caso[[i]]))$Sport))
   print("\n---------")
 }
 
-mean((subset(base, eval == caso))$Age)
+mean((subset(base, base$Medal == "No Medal"))$Age)
+table(base$Medal)
 
 var((subset(base, eval == caso))$Age)
 
