@@ -21,12 +21,15 @@ class basics{
     }
 
     public String getAtributostr() {
+
         return Atributostr;
+
     }
     ////////////////////////
 
 
     void inputAtributostr(){
+
         Scanner input = new Scanner(System.in);
 
         System.out.print("Ingrese atributostr: ");
@@ -40,5 +43,23 @@ class basics{
     int sumar(int a, int b){
         return a + b;
     }
+
+    /* MAIN AUXILIAR
+    
+    public static void main(String args[]){
+        
+        basics culo = new basics(); // crear objeto desde contructor
+        
+        int s = culo.sumar(123, 23);
+        
+        culo.setAtributoint(s);
+
+        culo.inputAtributostr();
+
+        System.out.println("\nGuardaste:\n- "+culo.Atributostr+"\n- "+culo.getAtributoint());
+
+        System.out.println(culo.setterctm);
+    }
+    */
 
 }
