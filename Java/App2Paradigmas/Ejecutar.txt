@@ -1,0 +1,8 @@
+Correr para generar ejecutables:
+
+javac Archivo.java
+
+
+Correr para iniciar java
+
+java Archivo <argumento>

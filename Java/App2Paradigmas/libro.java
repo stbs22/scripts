@@ -1,4 +1,7 @@
+import java.util.Arrays;
+
 public class libro {
+  
     public String autor;
     public String nombre;
     public String es;
@@ -7,20 +10,23 @@ public class libro {
     public String anio;
     public String en;
     public String piso;
+    public boolean live;
   
 
-    libro(String nombre, String autor, String es, String sede, String edi, String anio, String en, String piso) {
+    libro(String nombre, String autor, String anio, String en, String es, String piso, String edi, String sede) {
+
         this.nombre = nombre;
         this.autor = autor;
-        this.es = es;
-        this.sede = sede;
+        this.es = es;//
+        this.sede = sede;//
         this.edi = edi;
         this.anio = anio;
         this.en = en;
-        this.piso = piso; 
+        this.piso = piso;//
+        this.live = true;
     }
 
-    // Seccion para preguntar alguna caracteristica correspondiente
+    // Seccion getter para preguntar alguna caracteristica correspondiente
 
     public String getNombre() {
         return nombre;
@@ -54,12 +60,17 @@ public class libro {
         return piso;
     }
 
-    // Seccion para editar o asignar alguna caracteristica correspondiente
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public boolean getLive(){
+      return live;
     }
 
+    // Seccion setter para editar o asignar alguna caracteristica correspondiente
+
+    public void setNombre(String nombre, boolean var) {
+        if (var) this.nombre = "\""+nombre+"\"";
+        else this.nombre = nombre;
+    }
+    
     public void setAutor(String autor) {
         this.autor = autor;
     }
@@ -86,5 +97,18 @@ public class libro {
 
     public void setPiso(String piso) {
         this.piso = piso;
+    }
+
+    public void borrar() {
+        this.live = false;
+    }
+
+    public static libro[] newlibro(libro[] lista, int n, String nombre, String autor, String anio, String en, String es, String piso, String edi, String sede){
+      
+      lista = Arrays.copyOf(lista, n + 1);
+
+      lista[n] = new libro(nombre, autor, anio, en, es, piso, edi, sede);
+    
+      return lista;
     }
 }
