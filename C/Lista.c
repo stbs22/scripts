@@ -10,6 +10,7 @@ typedef struct l {
     node* tail;
 } list;
 
+
 list* create_list() {
   list* nueva_lista = (list*)malloc(sizeof(list));
   nueva_lista->head = NULL;
