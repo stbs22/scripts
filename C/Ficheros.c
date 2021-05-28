@@ -13,6 +13,25 @@ int cont_char(FILE *archivo){
     return n;
 }
 
+//Pasar por completo a string un Fichero abierto
+char *fstr(FILE *archivo, int cont_caracteres){
+
+    char *ftxt = malloc(cont_caracteres*sizeof(char));
+    int cont = 0;
+    
+    while(!feof(archivo)){
+        char c = fgetc(archivo);
+        if( ("%d",c) != -1 ){
+          //printf("\n%c - %d",c,c);
+          ftxt[cont] = c;
+        } 
+        cont++;
+    }
+    
+    rewind(archivo);
+    return ftxt;
+}
+
 //Imprime caracter por caracter un fichero completo
 void fprint(FILE *archivo){
     while(!feof(archivo)){
