@@ -40,6 +40,64 @@ void fprint(FILE *archivo){
     rewind(archivo);
 }
 
+
+//crear lista de char** columna especifica csv con 
+char** extr_columna_char(FILE *archivo, int nfilas, int pos){
+
+  char fila[300];
+  char **data = (char **)malloc( (nfilas-1) * sizeof(char *));
+
+  int salto = 0, i = 0;
+
+  while(fgets(fila, 300, archivo)){
+
+    char *temp = strtok(fila, ",");
+    
+    if (temp != NULL && salto == 1){
+      
+      for(int x = 0; x < pos; x++){
+        temp = strtok(NULL, ",");
+      }
+      data[i] = (char *)malloc(300 * sizeof(char));
+      strcpy(data[i], temp);
+      i++;
+    }
+    salto = 1;
+  }
+
+  rewind(archivo);
+
+  return data;
+}
+
+
+//crear lista de floats* columna especifica csv con 
+float* extr_columna_float(FILE *archivo, int nfilas, int pos){
+
+  char fila[300];
+  float *data = (float *)malloc( (nfilas-1) * sizeof(float));
+  int salto = 0, i = 0;
+
+  while(fgets(fila, 300, archivo)){
+
+    char *temp = strtok(fila, ",");
+    
+    if (temp != NULL && salto == 1){
+      
+      for(int x = 0; x < pos; x++){
+        temp = strtok(NULL, ",");
+      }
+      data[i] = atof(temp);
+      i++;
+    }
+    salto = 1;
+  }
+
+  rewind(archivo);
+  return data;
+}
+
+
 //Imprimir en ascii cada caracter de fichero
 int fLecAux(FILE *archivo){
     int c = 1;
@@ -88,11 +146,14 @@ int cont_col(FILE *archivo){
 
 //Comprobar si el archivo está correctamente puesto
 void argv_excepcion(char **argv){
+    
     if(argv[1] == NULL){
         printf("\x1b[31mERROR:\x1b[0m No se ha ingresado archivo\n");
         exit(1);
     }
+
     FILE *archivo = fopen(argv[1],"r");
+
     if(archivo == NULL){
         printf("\x1b[31mERROR:\x1b[0m El archivo \'%s\' no existe o no tiene datos\n",argv[1]);
         exit(1);

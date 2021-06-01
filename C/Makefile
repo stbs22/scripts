@@ -1,7 +1,7 @@
 
 ##Cambiar por nombre de archivo .c
 ###########################
-NAME = busqueda
+NAME = basic
 ###########################
 
 #Copiar y pegar en consola para correr archivo destino
