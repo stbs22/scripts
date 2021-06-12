@@ -1,7 +1,7 @@
 
 ##Cambiar por nombre de archivo .c
 ###########################
-NAME = basic
+NAME = A_EDA_Arboles
 ###########################
 
 #Copiar y pegar en consola para correr archivo destino

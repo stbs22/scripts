@@ -37,7 +37,22 @@ void fprint(FILE *archivo){
     while(!feof(archivo)){
         printf("%c",fgetc(archivo));
     }
+    
     rewind(archivo);
+}
+
+//Guardar texto en fichero sin sobreescribir
+void fsavestr(FILE* archivo, char* dir, char* str, int pass){
+
+  FILE* new_file = freopen(dir,"a",archivo); 
+  
+  if (pass) fprintf(new_file,"\n"); 
+
+  for(int i = 0; i < (strlen(str)) ; i++){  
+    if( (int)str[i] != -1)fprintf(new_file,"%c",str[i]);
+    
+  }
+  rewind(archivo);
 }
 
 
