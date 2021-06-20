@@ -4,18 +4,18 @@
 
 //Imprimir en ascii cada caracter de fichero
 void sLecAux(char *texto){
-    for(int i = 0; i< strlen(texto) ; i++){
-        
-        char ctx = texto[i];
-        int ascii = (int)ctx, index = i+1;
+  for(int i = 0; i< strlen(texto) ; i++){
+      
+      char ctx = texto[i];
+      int ascii = (int)ctx, index = i+1;
 
-        if(ascii != 13 && ascii != 10 && ascii > 31)printf("Caracter %i: [ %c ] - ACSII: %i\n",index,ctx,ascii);
-        if(ascii == 13)printf("Caracter %i: [ \\n ] - ACSII: %i\n",index,ascii);
-        if(ascii == 10)printf("Caracter %i: [ Nueva linea ] - ACSII: %i\n",index,ascii);
-        if(ascii <= 31 && ascii != 13 && ascii != 10)printf("\x1b[31mCaracter %i: [ %c ] - ACSII: %i\x1b[0m\n",index,ctx,ascii);
-        if (i == 950){ printf("Se excedieron 950 caracteres\n");  return;}
-    }
-    printf("incluir offset (-1) para numero de caracter\n");
+      if(ascii != 13 && ascii != 10 && ascii > 31)printf("Caracter %i: [ %c ] - ACSII: %i\n",index,ctx,ascii);
+      if(ascii == 13)printf("Caracter %i: [ \\n ] - ACSII: %i\n",index,ascii);
+      if(ascii == 10)printf("Caracter %i: [ Nueva linea ] - ACSII: %i\n",index,ascii);
+      if(ascii <= 31 && ascii != 13 && ascii != 10)printf("\x1b[31mCaracter %i: [ %c ] - ACSII: %i\x1b[0m\n",index,ctx,ascii);
+      if (i == 950){ printf("Se excedieron 950 caracteres\n");  return;}
+  }
+  printf("incluir offset (-1) para numero de caracter\n");
 }
 
 char int_txt(int ascii){
@@ -56,6 +56,11 @@ int* leer_archivo_numero(char* nombre){
 int min(int a, int b){
     return (a < b ? a : b);
 }
+
+int min(int a, int b){
+    return (a > b) ? a : b;
+}
+
 
 int main(void){
 

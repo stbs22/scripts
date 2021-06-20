@@ -5,21 +5,25 @@ import webbrowser
 import time
 import os
 
-pagina = "https://orteil.dashnet.org/cookieclicker/"
+# pagina = "https://orteil.dashnet.org/cookieclicker/"
 
-path_driver = "/home/_init_/chromedriver"
+# path_driver = "/home/_init_/chromedriver"
 
-try:
-    driver = webdriver.Chrome(path_driver)
-    driver.get(pagina)
-    galletaxd = driver.find_element_by_id("bigCookie")
+# try:  
+#     driver = webdriver.Chrome(path_driver)
+#     driver.get(pagina)
+#     galletaxd = driver.find_element_by_id("bigCookie")
     
-    while(True):
-        galletaxd.click()
+#     while(True):
+#         galletaxd.click()
 
 
-except Exception as e:
+# except Exception as e:
     
-    print("\n",e)
-    time.sleep(2)
-    driver.close()
+#     print("\n",e)
+#     time.sleep(2)
+#     driver.close()
+
+dictio = {"a":1,"c":2}
+num = dictio["a"]
+print(num)

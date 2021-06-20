@@ -103,13 +103,13 @@ int fibonacci_search(int arr[], int len, int numero) {
         printf("posicion(i): %d de valor: %d\n",i,arr[i]);
         printf("offset: {%d}\n",offset,fibm2);
 
-		if (numero > arr[i]) { 
+        if (numero > arr[i]) { 
             printf("mas arriba, offset = {%d} + f(n-2):{%d}\n---\n\n",offset,fibm2) ;
-			fibM = fibm1; 
-			fibm1 = fibm2; 
-			fibm2 = fibM - fibm1; 
-			offset = i; 
-		} 
+            fibM = fibm1; 
+            fibm1 = fibm2; 
+            fibm2 = fibM - fibm1; 
+            offset = i; 
+        } 
 
 		else if (numero < arr[i]) { 
             printf("mas abajo(offset no cambia)\n---\n\n");

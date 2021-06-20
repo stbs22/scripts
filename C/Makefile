@@ -1,7 +1,7 @@
 
 ##Cambiar por nombre de archivo .c
 ###########################
-NAME = A_EDA_Arboles
+NAME = matrices#A_EDA_Arboles
 ###########################
 
 #Copiar y pegar en consola para correr archivo destino

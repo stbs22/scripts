@@ -7,12 +7,12 @@ import time
 import os
 
 pagina = "https://www.nombrerutyfirma.com/"
-
 path_driver = "/home/_init_/chromedriver"
 
 def buscar_name(nombre, driver):
     boton = driver.find_elements_by_class_name("nav-link")
     boton[0].click()
+    
     barra = driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[1]/form/div/input")
     barra.send_keys(nombre)
     barra.send_keys(Keys.ENTER)
@@ -29,6 +29,7 @@ try:
     driver = webdriver.Chrome(path_driver)
     driver.minimize_window()
     driver.get(pagina)
+    
     x = int(input("\nQ teni pa sapear?\n\n1. Nombre\n2. Rut\n\n>>"))
     if (x == 1):
         txt = input("\nIngrese nombre a buscar: ")

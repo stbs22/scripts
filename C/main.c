@@ -2,26 +2,31 @@
 #include <string.h>
 #include <stdlib.h>
 
+typedef struct a{
+    int data;
+    struct a *izquierda;
+    struct a *derecha;
+}nodo;
+
+nodo* nuevo_arbol(int data){
+    nodo* arbol = malloc(sizeof(nodo));
+    
+    arbol->data = 0;
+    
+    arbol->derecha = NULL;
+    arbol->izquierda = NULL;
+
+    return arbol;
+}
+
 int main(int argc, char** argv){
-    int* arr;
+    
+    nodo* arbol;// = malloc(sizeof(nodo));
+    //arbol = nuevo_arbol(10);
 
-    int n;
-    printf("\ningrese numero: ");
-    scanf("%i",&n);
+    if(arbol == NULL) printf("\nctm");
 
-    arr = (int*)malloc(n * sizeof(int));
-
-    for(int i = 0; i < n; i++){
-        arr[i] = 20 + 2*i;
-    }
-
-    int n2;
-
-    printf("\ningrese numero: ");
-    scanf("%i",&n2);
-
-    printf("\n%i\n",arr[n2]);
-    free(arr);
+    printf("%i\n",arbol->data);
 
     return 0;
 }

@@ -1,5 +1,5 @@
-install.packages("readxl")
-
+install.packages("RCurl")
+library (RCurl)
 library(readxl)
 options(max.print = 9999999)
 
@@ -7,7 +7,13 @@ setwd("/home/_init_/Documentos/Scripts/GIT/scripts/Data/FCD/"); base = read.csv(
 setwd("/home/_init_/Documentos/Scripts/GIT/scripts/Data/FCD/"); base = read.csv("datap1.csv", sep = ","); 
 
 setwd("C:/Users/ESTEBAN/Documents/Scripts_U/git/scripts/Data/FCD"); base_na = read.csv("datap1.csv", sep = ","); 
+dir = "https://github.com/stbs22/scripts/blob/2f1fb45b3c17043aaf2430217d8d05340f44a040/Data/FCD/data.csv"
+down = "https://github.com/stbs22/scripts/raw/master/Data/FCD/data.csv"
 
+weaaaa = "https://raw.githubusercontent.com/stbs22/scripts/master/Data/FCD/data.csv?token=ARXMWNAXR3I77PPJEPEQWN3AZUGTU"
+wea = getURL(weaaaa)
+base_na = read.csv(text = wea, sep = ";") 
+base_na
 colnames(base)
 
 # "Name"   "Sex" "Team" "NOC"    "Games" "Season" "City"   "Sport" "Event"  "Medal"
