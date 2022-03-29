@@ -1,3 +1,4 @@
+#Wea pa compilar en c
 
 ##Cambiar por nombre de archivo .c
 ###########################

@@ -1,0 +1,22 @@
+Linear search
+Best-case performance: O(1)
+Worst-case performance: O(n)
+complexity: O(n)
+
+Binary search
+Best-case performance: O(1)
+Worst-case performance: O(log n)
+complexity: O(log n)
+
+Exponential search
+Best-case performance: O(1)
+Worst-case performance: O(log n)
+complexity: O(log n)
+
+Fibonacci search
+Best-case performance: O(1)
+Worst-case performance: O(log n)
+complexity: O(log n)
+
+
+https://www.geeksforgeeks.org/complexity-analysis-of-binary-search/
