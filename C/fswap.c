@@ -24,7 +24,7 @@ int main(void){
 
 	printf("\nSin Función:\na: %i[%p] - b: %i[%p]\n",a,&a,b,&b);
 	swap(&a,&b);
-	printf("\nFunción swap:\na: %i[%p] - b: %i[%p]\n",a,&a,b,&b);
+	printf("\nFunción swap:\na: %i[%p] - b: %i[%p]",a,&a,b,&b);
 	
 	
 	return 0;
