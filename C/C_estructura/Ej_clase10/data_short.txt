@@ -1,0 +1,11 @@
+id	nombre	apellido	email	genero	altura
+1	Janice	Goodband	jgoodband0@elegantthemes.com	Female	1.6474
+2	Debora	Reisk	dreisk1@cbc.ca	Female	1.732
+3	Douglass	Crohan	dcrohan2@vistaprint.com	Male	1.7678
+4	Earlie	Beaument	ebeaument3@europa.eu	Male	1.7296
+5	Jarib	Joyner	jjoyner4@wiley.com	Male	1.6695
+6	Aurel	Petheridge	apetheridge5@sakura.ne.jp	Female	1.6408
+7	Silvain	Curle	scurle6@cafepress.com	Male	1.4464
+8	Estrellita	Kwietak	ekwietak7@histats.com	Female	1.6121
+9	Franklyn	Dobble	fdobble8@tiny.cc	Male	1.6472
+10	Elsbeth	Sego	esego9@yahoo.com	Female	1.6676

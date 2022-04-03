@@ -1,0 +1,27 @@
+Se le presenta un archivo con los datos de N personas configurado de la siguiente manera:
+
+Primera línea contiene las cabeceras del archivo
+Resto de las líneas corresponden a la información de cada una de las personas.
+ 
+La información de cada persona está dividida en 6 campos: ID, nombre, apellido, email, género y altura.
+
+Se le pide a usted como experto en estructura de datos y algoritmos de ordenamiento que escriba un código en C capaz de ordenar una lista previamente llenada, siguiendo las siguientes reglas:
+
+- Debe ser ordenada en base a la altura. Aquellos con menor altura deben ir antes en la lista (más cerca del comienzo), mientras que aquellos con altura mayor deben ir al final de la lista.
+- Sin perjuicio de lo anterior, y debido a políticas de equidad de género, una restricción importante es que el ordenamiento sea intercalado: En la primera posición debe ir una mujer, en la segunda un hombre, en la tercera una mujer, en la cuarta un hombre, y así sucesivamente. Puede suponer que existe la misma cantidad de hombres y mujeres.
+
+
+Para lo siguiente, debe implementar 3 procedimientos:
+
+- void ordenar(struct p **lista);
+Debe ordenar la lista que se recibe como parámetro, por altura.
+
+- void divide_lista_genero(struct p **lista, struct p **lista_m, struct p **lista_h)
+Debe separar la lista que se recibe como parámetro, en dos sublistas, una que contenga solo a las mujeres, y otra que contenga solo a los hombres. Ambas sublistas deben estar ordenadas.
+
+- void unir_lista_intercalada(struct p **lista1, struct p **lista2, struct p **lista_final);
+Debe unir dos listas ordenadas, en una lista final, de forma intercalada.
+
+Solo debe modificar los archivos pregunta1.c, pregunta2.c y pregunta3.c
+
+Su código DEBE compilar.

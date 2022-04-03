@@ -15,7 +15,7 @@ int main(void){
 	int b = 4;
 	
 	printf("\na: %i[%p] - b: %i[%p]\n",a,&a,b,&b);
-	
+
 	/* Siendo función, espacios de memoria no cambián */	
 	int temp;
 	temp = a;
