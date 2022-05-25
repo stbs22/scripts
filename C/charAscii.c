@@ -16,6 +16,7 @@ int fLecAux(FILE *archivo){
         c++;
     }
     rewind(archivo);
+	return 0;
 }
 
 int main(int argc, char **argv){
