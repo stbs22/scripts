@@ -8,7 +8,7 @@ import rsa
 import time
 import os
 
-id = "ctl00_ContentPlaceHolder1_wucReservas_GrdReservas_ctl00__17"
+id = "ctl00_ContentPlaceHolder1_wucReservas_GrdReservas_ctl00__12"
 
 def encontrar(reserva):
   
@@ -40,8 +40,6 @@ path = "/home/laptop_eh/Aplications/chromedriver_96"
 
 #################
 usuario = 'eshernandez@alumnos.uai.cl'
-contraseña = '7Tofilijones20193804%;Parangari'
-#################
 
 try:
   driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -62,6 +60,7 @@ try:
 
   gimnasio = driver.find_element( value=id, by=By.ID )
   print("Intentando Suscribir:\n "+str(gimnasio.text))
+  input("Esperando confirmación...")
 
   while ( encontrar(gimnasio) ): #and ("Gimnasio" in gimnasio.text) ):
     driver.refresh()
