@@ -1,37 +1,30 @@
 #include <stdio.h>
 
-
-/* Intercambio de contenido */
-/* Swap real */
-void swap(int* a, int* b){
-	int tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+void swap(int a, int b)
+{
+    int tmp;
+    tmp = a;
+    a = b;
+    b = tmp;
 }
 
+void swapBueno(int *a, int *b)
+{
+    int tmp;
+    tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
 
-int main(void){
-	
-	int a = 9;
-	int b = 4;
-	
-	printf("\na: %i[%p] - b: %i[%p]\n",a,&a,b,&b);
+int main(int argc, char **argv)
+{
+    int x = 0;
+    int y = 20;
 
-	/* Intercambio de punteros enteros */
-	/* swap qlo malo */
-	int temp;
-	temp = a;
-	a =  b;
-	b = temp;
-
-	printf("\nSin Función:\na: %i-[%p] -- b: %i-[%p]\n",a,&a,b,&b);
-	
-	/* swap real */
-	swap(&a,&b);
-	
-	printf("\nFunción swap:\na: %i-[%p] -- b: %i-[%p]\n",a,&a,b,&b);
-	
-	return 0;
-} 
+    printf("Comienzo\nx: %i - y: %i\n\n", x, y);
+    swap(x, y);
+    printf("Malo\nx: %i - y: %i\n\n", x, y);
+    swapBueno(&x, &y);
+    printf("Bueno\nx: %i - y: %i\n", x, y);
+    return 0;
+}
