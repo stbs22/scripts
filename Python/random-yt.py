@@ -5,7 +5,7 @@ from time import sleep
 from googleapiclient.discovery import build
 
 # Ingresar aquí tu clave de API de YouTube Data
-API_KEY = "AIzaSyCSgJ252dAt9sCHC9Sb5t9PKsVumKX3Jo4"
+API_KEY = ""
 
 caracteres = ["-", "_"] + [chr(i) for i in range(48, 58)] + [chr(i) for i in range(97, 123)] + [chr(i) for i in range(65, 91)]
 
