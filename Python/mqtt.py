@@ -1,33 +1,30 @@
-import paho.mqtt.client as mqtt
-import subprocess
+import paho.mqtt.client as mqtt 
 import time
-import os
-import keylogger
+
+mqttBroker ="broker.hivemq.com"
+
+client = mqtt.Client("nombre_cliente_xd")
+client.connect(mqttBroker)
+
+m = "Wena conchetumare"
+t = "topicoreqlo"
+
+
+#Publishing
+for _ in range(3):
+    client.publish(t, m)
+    print("Just published " + str(m) + " to topic TEMPERATURE")
+    time.sleep(1)
+
+#Subscribe
+print("Subscribing to topic: ",t)
+client.loop_start()
 
 def on_message(client, userdata, message):
-    print("message received " ,str(message.payload.decode("utf-8")))
-    print("message topic=",message.topic)
-    print("message qos=",message.qos)
-    print("message retain flag=",message.retain)
+    print("received message: " ,str(message.payload.decode("utf-8")))
 
-mqttBroker="broker.hivemq.com"
-#mqttBroker="mqtt.eclipseprojects.io"
+client.subscribe(t)
+client.on_message=on_message 
+time.sleep(30)
 
-topic = "pruebaqla"
-cliente = "clienteqlo"
-
-client = mqtt.Client(cliente)
-
-#client.on_message=on_message
-client.connect(mqttBroker, port=1883)
-
-while True:
-    os.system("mosquitto_pub -h broker.hivemq.com -p 1883 -t pruebaqla -m kweaasa")
-    time.sleep(1)
-    print("publicando weas")
-
-while False:
-    client.subscribe(topic, qos=0)
-    client.loop_start()
-
-    
+client.loop_stop()
