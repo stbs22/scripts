@@ -1,1 +1,0 @@
-void sort_names(char** nombres, int* numeros, int numero_elementos);

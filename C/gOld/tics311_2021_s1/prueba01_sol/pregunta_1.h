@@ -1,1 +1,0 @@
-char** leer_archivo_texto(char* filename);
